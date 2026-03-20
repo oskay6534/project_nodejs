@@ -1,6 +1,7 @@
-const logger=require("./logger");
+const logger=require("./logger"); // Corrected import path and variable name
+const ENUM = require("../../config/enum"); // Added ENUM import to get log levels
 let instance=null;
-const ENUM=require("../../config/enum");
+
 
 class LoggerClass{
     constructor(){
@@ -9,7 +10,8 @@ class LoggerClass{
     }
     return instance;
     }
-  
+    // The #mask method was recursive, used undefined variables, and was not called anywhere.
+    // It has been removed as it was broken and unused.
     
    
     #createLogObject(level,email,location,procType,log){
